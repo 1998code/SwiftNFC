@@ -19,7 +19,7 @@ iOS       | 16     | > 14
 Compatible with Xcode Cloud ☁️
 
 ## Guide
-Available later this week.
+Medium
 
 ## Demo
 Path: `./Demo` (Xcode Project in SwiftUI)
