@@ -10,6 +10,8 @@ Provide a super-easy way for Apple Developers to Read and Write Tags on SwiftUI.
 ![GitHub release (latest by date)](https://img.shields.io/github/v/release/1998code/SwiftNFC?color=g&label=STABLE&style=for-the-badge)
 ![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/v/release/1998code/SwiftNFC?color=green&include_prereleases&label=BETA&style=for-the-badge)
 
+![image](https://user-images.githubusercontent.com/54872601/214541974-765d5cc5-97d1-4f31-9cde-eafc27213280.png)
+
 ## Environment
 
 ![CleanShot 2023-01-25 at 11 58 02@2x](https://user-images.githubusercontent.com/54872601/214476769-06b41017-f682-44d0-860a-3c01e0dc7eea.png)
@@ -37,7 +39,7 @@ Full Tutorial on Medium
 <img width="793" alt="CleanShot 2023-01-25 at 12 30 23@2x" src="https://user-images.githubusercontent.com/54872601/214480669-01f352f0-ab74-42cd-a117-a39c50427acf.png">
 
 3. Add NFC Privacy into ```Info.plist```
-<img width="779" alt="CleanShot 2023-01-25 at 12 30 52@2x" src="https://user-images.githubusercontent.com/54872601/214480691-280557d5-47b4-457c-8fe2-ae628f3a2c42.png">
+<img width="737" alt="CleanShot 2023-01-25 at 18 35 58@2x" src="https://user-images.githubusercontent.com/54872601/214542015-48aa77b1-70b6-4dc1-b953-712282a651e3.png">
 
 ## Basic Usage
 
