@@ -29,7 +29,7 @@ Compatible ✅
 *Xcode Cloud requires Apple Developer Program membership.*
 
 ## Guide
-Full Tutorial on Medium
+[Full Tutorial on Medium](https://1998design.medium.com/how-to-create-a-simple-nfc-app-with-swiftui-d41e3bcd116c)
 
 ## Preparation
 1. Add to your project via Package Manager.
