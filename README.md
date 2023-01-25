@@ -23,6 +23,7 @@ iOS       | 16     | > 14
 
 ### Xcode Cloud ☁️
 Compatible ✅
+
 *Xcode Cloud requires Apple Developer Program membership.*
 
 ## Guide
