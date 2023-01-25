@@ -1,7 +1,7 @@
 # SwiftNFC 📱🏷️ - Powerful Read+Write within few lines of Coding
 ### Accelerated by Apple SwiftUI & Backed with CoreNFC
 
-
+![CleanShot 2023-01-25 at 12 08 05](https://user-images.githubusercontent.com/54872601/214478735-473777e6-942b-4c91-b1b3-9ea14e6b493d.gif)
 
 ## Aims
 Provide a super-easy way for Apple Developers to Read and Write Tags on SwiftUI.
@@ -23,9 +23,39 @@ iOS       | 16     | > 14
 
 ### Xcode Cloud ☁️
 Compatible ✅
+*Xcode Cloud requires Apple Developer Program membership.*
 
 ## Guide
-Medium
+Full Tutorial on Medium
+
+## Basic Usage
+1. Import first.
+```swift
+import SwiftNFC
+```
+
+2. Add ObservedObject before ```body``` or any ```some View```.
+
+### Read
+```swift
+@ObservedObject var NFCR = NFCReader()
+```
+
+### Write
+```swift
+@ObservedObject var NFCW = NFCWriter()
+```
+
+### Functions
+```swift
+func read() {
+        NFCR.read()
+    }
+func write() {
+    NFCW.msg = NFCR.msg
+    NFCW.write()
+}
+```
 
 ## Demo
 Path: `./Demo` (Xcode Project in SwiftUI)
