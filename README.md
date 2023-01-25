@@ -28,9 +28,17 @@ Compatible ✅
 ## Guide
 Full Tutorial on Medium
 
-## Basic Usage
-0. Add to your project via Package Manager.
+## Preparation
+1. Add to your project via Package Manager.
 <img width="1194" alt="CleanShot 2023-01-25 at 12 23 13@2x" src="https://user-images.githubusercontent.com/54872601/214479471-65e1469c-613f-45dd-ac1f-a8383b746a93.png">
+
+2. Add ```Near Field Communication Tag Reading``` (aka NFC) into the Project's Combilities.
+<img width="793" alt="CleanShot 2023-01-25 at 12 30 23@2x" src="https://user-images.githubusercontent.com/54872601/214480669-01f352f0-ab74-42cd-a117-a39c50427acf.png">
+
+3. Add NFC Privacy into ```Info.plist```
+<img width="779" alt="CleanShot 2023-01-25 at 12 30 52@2x" src="https://user-images.githubusercontent.com/54872601/214480691-280557d5-47b4-457c-8fe2-ae628f3a2c42.png">
+
+## Basic Usage
 
 1. Import first.
 ```swift
