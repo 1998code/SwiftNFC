@@ -28,6 +28,8 @@ Compatible ✅
 ## Guide
 Full Tutorial on Medium
 
+<img width="1194" alt="CleanShot 2023-01-25 at 12 23 13@2x" src="https://user-images.githubusercontent.com/54872601/214479471-65e1469c-613f-45dd-ac1f-a8383b746a93.png">
+
 ## Basic Usage
 1. Import first.
 ```swift
@@ -49,8 +51,8 @@ import SwiftNFC
 ### Functions
 ```swift
 func read() {
-        NFCR.read()
-    }
+    NFCR.read()
+}
 func write() {
     NFCW.msg = NFCR.msg
     NFCW.write()
