@@ -1,7 +1,7 @@
 # SwiftNFC 📱🏷️ - Powerful Read+Write within few lines of Coding
 ### Accelerated by Apple SwiftUI & Backed with CoreNFC
 
-![CleanShot 2023-01-25 at 12 08 05](https://user-images.githubusercontent.com/54872601/214478735-473777e6-942b-4c91-b1b3-9ea14e6b493d.gif)
+<img width="350px" src="https://user-images.githubusercontent.com/54872601/214478735-473777e6-942b-4c91-b1b3-9ea14e6b493d.gif" />
 
 ## Aims
 Provide a super-easy way for Apple Developers to Read and Write Tags on SwiftUI.
