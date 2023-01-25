@@ -22,7 +22,7 @@ iOS       | 16     | > 14
 *Apple Watch is well-known not supported. iPad / Mac is compatible with CoreNFC but there is no hardware to support this feature. 😂*
 
 ### Xcode Cloud ☁️
-Compatible
+Compatible ✅
 
 ## Guide
 Medium
