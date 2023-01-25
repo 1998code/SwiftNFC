@@ -4,7 +4,7 @@
 <img width="350px" src="https://user-images.githubusercontent.com/54872601/214478735-473777e6-942b-4c91-b1b3-9ea14e6b493d.gif" />
 
 ## Aims
-Provide a super-easy way for Apple Developers to Read and Write Tags on SwiftUI.
+Provide a super-easy way for Apple Developers to Read and Write NFC Tags on SwiftUI.
 
 ## Version
 ![GitHub release (latest by date)](https://img.shields.io/github/v/release/1998code/SwiftNFC?color=g&label=STABLE&style=for-the-badge)
