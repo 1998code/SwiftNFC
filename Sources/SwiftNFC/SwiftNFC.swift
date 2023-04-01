@@ -104,7 +104,18 @@ public class NFCWriter: NSObject, ObservableObject, NFCNDEFReaderSessionDelegate
                     session.alertMessage = "Read only tag detected."
                     session.invalidate()
                 case .readWrite:
-                    let message = NFCNDEFMessage(records: [NFCNDEFPayload(format: .nfcWellKnown, type: Data("\(self.type)".utf8), identifier: Data(), payload: Data("\(self.msg)".utf8))])
+                    let payload: NFCNDEFPayload?
+                    if self.type == "T" {
+                        payload = NFCNDEFPayload.init(
+                            format: .nfcWellKnown,
+                            type: Data("\(self.type)".utf8),
+                            identifier: Data(),
+                            payload: Data("\(self.msg)".utf8)
+                        )
+                    } else {
+                        payload = NFCNDEFPayload.wellKnownTypeURIPayload(string: "\(self.msg)")
+                    }
+                    let message = NFCNDEFMessage(records: [payload].compactMap({ $0 }))
                     tag.writeNDEF(message, completionHandler: { (error: Error?) in
                         if nil != error {
                             session.alertMessage = "Write to tag fail: \(error!)"

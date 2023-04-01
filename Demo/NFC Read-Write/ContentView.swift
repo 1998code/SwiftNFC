@@ -65,11 +65,18 @@ struct ContentView: View {
     }
     
     // MARK: - Select NFC Option(s)
+    @AppStorage("type") private var type = "T"
     var option: some View {
         HStack {
-            Picker(selection: $NFCW.type, label: Text("Type Picker")) {
+            Picker(selection: $type, label: Text("Type Picker")) {
                 Text("Text").tag("T")
                 Text("Link").tag("U")
+            }
+            .onAppear {
+                NFCW.type = type
+            }
+            .onChange(of: type) { newType in
+                NFCW.type = newType
             }
             Spacer()
             if keyboard {
