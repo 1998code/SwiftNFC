@@ -11,11 +11,20 @@ public class NFCReader: NSObject, ObservableObject, NFCNDEFReaderSessionDelegate
 
     public var session: NFCNDEFReaderSession?
     
-    public func read() {
+    public func read(customStartMessage: String?, customEndMessage: String?) {
         guard NFCNDEFReaderSession.readingAvailable else {
             print("Error")
             return
         }
+        
+        if customStartMessage != nil {
+            self.startAlert = customStartMessage
+        }
+        
+        if customEndMessage != nil {
+            self.endAlert = customEndMessage
+        }
+        
         session = NFCNDEFReaderSession(delegate: self, queue: nil, invalidateAfterFirstRead: true)
         session?.alertMessage = self.startAlert
         session?.begin()
