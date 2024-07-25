@@ -1,0 +1,66 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "Close Keyboard" : {
+      "localizations" : {
+        "zh-HK" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "關閉鍵盤"
+          }
+        }
+      }
+    },
+    "Link" : {
+      "localizations" : {
+        "zh-HK" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "連結"
+          }
+        }
+      }
+    },
+    "Read NFC" : {
+      "localizations" : {
+        "zh-HK" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "讀取 NFC"
+          }
+        }
+      }
+    },
+    "Text" : {
+      "localizations" : {
+        "zh-HK" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "文字"
+          }
+        }
+      }
+    },
+    "Type Picker" : {
+      "localizations" : {
+        "zh-HK" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "類型選擇"
+          }
+        }
+      }
+    },
+    "Write NFC" : {
+      "localizations" : {
+        "zh-HK" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "寫入 NFC"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}

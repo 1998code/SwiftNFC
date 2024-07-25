@@ -1,13 +1,13 @@
 import SwiftUI
 import CoreNFC
 
-@available(iOS 13.0, *)
+@available(iOS 15.0, *)
 public class NFCReader: NSObject, ObservableObject, NFCNDEFReaderSessionDelegate {
-    
-    public var startAlert = "Hold your iPhone near the tag."
+
+    public var startAlert = String(localized: "Hold your iPhone near the tag.", bundle: .module)
     public var endAlert = ""
-    public var msg = "Scan to read or Edit here to write..."
-    public var raw = "Raw Data available after scan."
+    public var msg = String(localized: "Scan to read or Edit here to write...", bundle: .module)
+    public var raw = String(localized: "Raw Data available after scan.", bundle: .module)
 
     public var session: NFCNDEFReaderSession?
     
@@ -51,7 +51,7 @@ public class NFCReader: NSObject, ObservableObject, NFCNDEFReaderSessionDelegate
 
 public class NFCWriter: NSObject, ObservableObject, NFCNDEFReaderSessionDelegate {
     
-    public var startAlert = "Hold your iPhone near the tag."
+    public var startAlert = String(localized: "Hold your iPhone near the tag.", bundle: .module)
     public var endAlert = ""
     public var msg = ""
     public var type = "T"

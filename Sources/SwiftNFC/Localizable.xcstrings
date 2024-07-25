@@ -1,0 +1,37 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "Hold your iPhone near the tag." : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-HK" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "將 iPhone 靠近 NFC 標籤。"
+          }
+        }
+      }
+    },
+    "Raw Data available after scan." : {
+      "localizations" : {
+        "zh-HK" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "掃描後可獲得原始資料。"
+          }
+        }
+      }
+    },
+    "Scan to read or Edit here to write..." : {
+      "localizations" : {
+        "zh-HK" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "掃描以閱讀或在此處編輯以寫入..."
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}
