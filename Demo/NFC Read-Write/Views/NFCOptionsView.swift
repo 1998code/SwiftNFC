@@ -74,5 +74,5 @@ struct NFCOptionsView: View {
     NFCOptionsView(
         nfcWriter: NFCWriter(),
         keyboardVisible: .constant(true)
-    )
+    ).preferredColorScheme(.dark)
 }

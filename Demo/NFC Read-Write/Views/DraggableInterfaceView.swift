@@ -106,4 +106,5 @@ struct DraggableInterfaceView<TopContent: View, BottomContent: View, DragContent
             .font(.caption)
     }
     .ignoresSafeArea(.all)
+    .preferredColorScheme(.dark)
 }
