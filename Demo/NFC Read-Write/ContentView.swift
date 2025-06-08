@@ -69,5 +69,5 @@ struct ContentView: View {
 
 #Preview {
     ContentView()
-        .environment(\.locale, Locale(identifier: "en_US"))
+        .preferredColorScheme(.dark)
 }

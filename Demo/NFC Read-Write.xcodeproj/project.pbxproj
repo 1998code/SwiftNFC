@@ -159,6 +159,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"zh-HK",
 			);
 			mainGroup = 3A7CA68A29616DAB00363E59;
 			packageReferences = (
