@@ -1,4 +1,4 @@
-# SwiftNFC 📱🏷️ - Powerful Read+Write within few lines of Coding
+# SwiftNFC 📱🏷️ - Powerful Read+Write Content
 ### Accelerated by Apple SwiftUI & Backed with CoreNFC
 
 <img width="350px" src="https://user-images.githubusercontent.com/54872601/214478735-473777e6-942b-4c91-b1b3-9ea14e6b493d.gif" />
