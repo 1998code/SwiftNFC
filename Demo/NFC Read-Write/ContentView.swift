@@ -9,122 +9,65 @@ import SwiftUI
 import SwiftNFC
 
 struct ContentView: View {
-    // MARK: - You can use either Reader / Writer or both in your application.
-    @ObservedObject var NFCR = NFCReader()
-    @ObservedObject var NFCW = NFCWriter()
+    // MARK: - NFC Components
+    @ObservedObject var nfcReader = NFCReader()
+    @ObservedObject var nfcWriter = NFCWriter()
     
-    // MARK: - Editor for I/O Message
-    var editor: some View {
-        TextEditor(text: $NFCR.msg)
-            .font(.title)
-            .padding(.top, 50)
-            .padding(15)
-            .background(Color.accentColor.opacity(0.5))
-    }
-    // MARK: - Show Read Message Raw Data
-    var editorRaw: some View {
-        TextEditor(text: $NFCR.raw)
-            .padding(15)
-            .background(Color.red.opacity(0.5))
-    }
+    // MARK: - UI State
+    @State private var keyboardVisible: Bool = false
     
-    // MARK: - Detect whether the keyboard shown on screen or not.
-    @State var keyboard: Bool = false
-    
-    // MARK: - Main App Content
     var body: some View {
-        VStack(spacing: 0) {
+        DraggableInterfaceView {
+            // Top Content - Message Editor
+            if #available(iOS 16.0, *) {
+                NFCMessageEditor(nfcReader: nfcReader)
+                    .scrollContentBackground(.hidden)
+            } else {
+                NFCMessageEditor(nfcReader: nfcReader)
+            }
+        } bottomContent: {
+            // Bottom Content - Raw Data Editor + Actions
             VStack(spacing: 0) {
                 if #available(iOS 16.0, *) {
-                    editor
-                        .scrollContentBackground(.hidden)
-                    option
-                    editorRaw
+                    NFCRawDataEditor(nfcReader: nfcReader)
                         .scrollContentBackground(.hidden)
                 } else {
-                    // Fallback on earlier versions
-                    editor
-                    option
-                    editorRaw
+                    NFCRawDataEditor(nfcReader: nfcReader)
                 }
-            }
-            action
+                
+                Divider()
+                
+                NFCActionView(
+                    onRead: { nfcReader.read() },
+                    onWrite: { 
+                        nfcWriter.msg = nfcReader.msg
+                        nfcWriter.write()
+                    }
+                )
                 .frame(height: 75)
+            }
+        } dragContent: {
+            // Drag Content - Options
+            NFCOptionsView(
+                nfcWriter: nfcWriter,
+                keyboardVisible: $keyboardVisible
+            )
         }
         .ignoresSafeArea(.all)
         .onReceive(NotificationCenter.default.publisher(for: UIResponder.keyboardWillShowNotification)) { _ in
-            keyboard = true
+            keyboardVisible = true
         }
         .onReceive(NotificationCenter.default.publisher(for: UIResponder.keyboardWillHideNotification)) { _ in
-            keyboard = false
+            keyboardVisible = false
         }
         .onTapGesture(count: 2) {
-            // MARK: Double Tap anywhere can hide the keyboard
+            // Double tap to hide keyboard
             UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
         }
     }
-    
-    // MARK: - Select NFC Option(s)
-    @AppStorage("type") private var type = "T"
-    var option: some View {
-        HStack {
-            Picker(selection: $type, label: Text("Type Picker")) {
-                Text("Text").tag("T")
-                Text("Link").tag("U")
-            }
-            .onAppear {
-                NFCW.type = type
-            }
-            .onChange(of: type) { newType in
-                NFCW.type = newType
-            }
-            Spacer()
-            if keyboard {
-                Button(action: {
-                UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
-                }) {
-                    Text("Close Keyboard")
-                }
-            }
-        }.padding(.horizontal)
-    }
-    
-    // MARK: - Action Buttons
-    var action: some View {
-        HStack(spacing: 0) {
-            Button (action: { read() }) {
-                ZStack {
-                    Color.pink.opacity(0.85)
-                    Label("Read NFC", systemImage: "wave.3.left.circle.fill")
-                        .foregroundColor(.white)
-                        .padding(.top, 15)
-                        .padding(.bottom, 35)
-                }
-            }
-            Button (action: { write() }) {
-                ZStack {
-                    Color.accentColor.opacity(0.85)
-                    Label("Write NFC", systemImage: "wave.3.left.circle.fill")
-                        .foregroundColor(.white)
-                        .padding(.top, 15)
-                        .padding(.bottom, 35)
-                }
-            }
-        }
-    }
-    
-    // MARK: - Sample I/O Functions
-    func read() {
-        NFCR.read()
-    }
-    func write() {
-        NFCW.msg = NFCR.msg
-        NFCW.write()
-    }
 }
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
+#Preview {
+    ContentView()
+        .environment(\.locale, Locale(identifier: "en_US"))
 }
