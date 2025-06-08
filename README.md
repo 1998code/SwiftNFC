@@ -1,20 +1,20 @@
 # SwiftNFC 📱🏷️ - Powerful Read+Write Content
 ### Accelerated by Apple SwiftUI & Backed with CoreNFC
 
-<img width="350px" src="https://user-images.githubusercontent.com/54872601/214478735-473777e6-942b-4c91-b1b3-9ea14e6b493d.gif" />
+<img width="1513" alt="NewCover" src="https://github.com/user-attachments/assets/4123ab55-6acd-4e61-9092-a7d180b95621" />
 
 ## Aims
 Provide a super-easy way for Apple Developers to Read and Write NFC Tags on SwiftUI.
+
+<img height="500px" src="https://user-images.githubusercontent.com/54872601/214478735-473777e6-942b-4c91-b1b3-9ea14e6b493d.gif" />
 
 ## Version
 ![GitHub release (latest by date)](https://img.shields.io/github/v/release/1998code/SwiftNFC?color=g&label=STABLE&style=for-the-badge)
 ![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/v/release/1998code/SwiftNFC?color=green&include_prereleases&label=BETA&style=for-the-badge)
 
-![image](https://user-images.githubusercontent.com/54872601/214541974-765d5cc5-97d1-4f31-9cde-eafc27213280.png)
+<img width="128px" src="https://user-images.githubusercontent.com/54872601/214541974-765d5cc5-97d1-4f31-9cde-eafc27213280.png" />
 
 ## Environment
-
-![CleanShot 2023-01-25 at 11 58 02@2x](https://user-images.githubusercontent.com/54872601/214476769-06b41017-f682-44d0-860a-3c01e0dc7eea.png)
 
 ### Xcode Local
 Tested on | Latest | Compatible
@@ -29,7 +29,7 @@ Compatible ✅
 *Xcode Cloud requires Apple Developer Program membership.*
 
 ## Guide
-[Full Tutorial on Medium](https://1998design.medium.com/how-to-create-a-simple-nfc-app-with-swiftui-d41e3bcd116c)
+[Full Tutorial](https://post.1998.media/how-to-create-a-simple-nfc-app-with-swiftui/)
 
 ## Preparation
 1. Add to your project via Package Manager.
