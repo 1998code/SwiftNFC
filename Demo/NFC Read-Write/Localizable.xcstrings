@@ -2,6 +2,7 @@
   "sourceLanguage" : "en",
   "strings" : {
     "Close Keyboard" : {
+      "extractionState" : "stale",
       "localizations" : {
         "zh-HK" : {
           "stringUnit" : {
@@ -30,6 +31,9 @@
           }
         }
       }
+    },
+    "SwiftNFC" : {
+
     },
     "Text" : {
       "localizations" : {

@@ -13,6 +13,7 @@ struct NFC_Read_WriteApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .statusBarHidden(true)
         }
     }
 }

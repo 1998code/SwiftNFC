@@ -11,9 +11,10 @@ struct DraggableInterfaceView<TopContent: View, BottomContent: View, DragContent
     let topContent: TopContent
     let bottomContent: BottomContent
     let dragContent: DragContent
-    
+
     @State private var topHeight: CGFloat = 0
     @State private var isDragging = false
+    @State private var topSafeArea: CGFloat = 0
     
     init(
         @ViewBuilder topContent: () -> TopContent,
@@ -28,11 +29,12 @@ struct DraggableInterfaceView<TopContent: View, BottomContent: View, DragContent
     var body: some View {
         GeometryReader { geometry in
             let initialHeight = geometry.size.height / 2
-            
+
             VStack(spacing: 0) {
                 // Top section
                 VStack {
                     topContent
+                        .padding(.top, topSafeArea)
                 }
                 .frame(height: topHeight)
                 .frame(maxWidth: .infinity)
@@ -85,7 +87,13 @@ struct DraggableInterfaceView<TopContent: View, BottomContent: View, DragContent
             }
             .onAppear {
                 if topHeight == 0 {
-                    topHeight = initialHeight - 100
+                    topHeight = initialHeight
+                }
+                if topSafeArea == 0 {
+                    topSafeArea = UIApplication.shared.connectedScenes
+                        .compactMap { $0 as? UIWindowScene }
+                        .first?.windows
+                        .first?.safeAreaInsets.top ?? 0
                 }
             }
         }

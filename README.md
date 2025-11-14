@@ -71,6 +71,32 @@ func write() {
 }
 ```
 
+## Reactive Properties
+
+Both `NFCReader` and `NFCWriter` classes use `@Published` properties for automatic SwiftUI view updates:
+
+### NFCReader Properties
+- `startAlert` - Alert message shown when scanning starts
+- `endAlert` - Custom alert message after scanning (optional)
+- `msg` - Decoded NFC message content (updates after scan)
+- `raw` - Raw NFC data with type, identifier, and payload information
+
+### NFCWriter Properties
+- `startAlert` - Alert message shown when writing starts
+- `endAlert` - Custom alert message after writing (optional)
+- `msg` - Content to write to the NFC tag
+- `type` - Record type: "T" for text (default) or "U" for URI
+
+These properties automatically trigger view updates when changed, enabling seamless SwiftUI integration with two-way bindings:
+
+```swift
+// Example: Bind to a TextField
+TextField("Message", text: $NFCW.msg)
+
+// Example: Display scan results
+Text(NFCR.msg)
+```
+
 ## Demo
 Path: `./Demo` (Xcode Project in SwiftUI)
 
